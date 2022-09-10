@@ -17,7 +17,8 @@ jobs:
           reviewdog_version: latest
       - name: Install PHP Code Sniffer
         run: |
-          composer require --dev dealerdirect/phpcodesniffer-composer-installer
+          curl -OL https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar
+          php phpcs.phar --version
 
       - name: run phpstan and reviewdog
         env:
