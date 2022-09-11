@@ -22,6 +22,6 @@ jobs:
 
       - uses: Novusvetus/action-php_codesniffer@1.2.7
         with:
-          files: "Controllers/**.php"
+          files: "**/Controllers/**.php,**/views/**"
           scan_all: true
           standard: PSR12
