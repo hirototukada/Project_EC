@@ -4,7 +4,7 @@ on:
   pull_request:
     paths:
       - "**.php"
-      - "phpcs.xml"
+      - "PSR12"
       - ".github/workflows/phpcs.yml"
 
 jobs:
@@ -25,4 +25,4 @@ jobs:
           files: "**.php"
           scan_all: true
           phpcs_path: php phpcs.phar
-          standard: phpcs.xml
+          standard: PSR12
