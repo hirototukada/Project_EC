@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\HomeContoroller;
+use App\Http\Controllers\IndexContoroller;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
  */
 
-Route::get( '/', function () {
-    return view( 'index' );
-} );
+// Topぺージ
+Route::get( '/', [IndexContoroller::class, 'index'] );
+// mypage
+Route::get( '/mypage', [HomeContoroller::class, 'index'] );
