@@ -12,7 +12,7 @@
         <div class="container-fluid">
           <a class="navbar-brand">logo</a>
           <form class="d-flex">
-            <a><button class="btn btn-outline-success" type="submit">LOGIN</button></a>
+            <a href="/mypage"><button class="btn btn-outline-success" type="button">Login</button></a>
             <button class="btn btn-outline-success" type="submit">カート画像</button>
           </form>
         </div>
