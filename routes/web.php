@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\HomeContoroller;
 use App\Http\Controllers\IndexContoroller;
 use Illuminate\Support\Facades\Route;
@@ -16,6 +17,8 @@ use Illuminate\Support\Facades\Route;
  */
 
 // Topぺージ
-Route::get( '/', [IndexContoroller::class, 'index'] );
+Route::get('/', [IndexContoroller::class, 'index']);
 // mypage
-Route::get( '/mypage', [HomeContoroller::class, 'index'] );
+Route::get('/mypage', [HomeContoroller::class, 'index']);
+// Auth
+Route::get('/login', [LoginController::class, 'index']);
