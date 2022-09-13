@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\HomeContoroller;
 use App\Http\Controllers\IndexContoroller;
 use Illuminate\Support\Facades\Route;
@@ -22,3 +23,4 @@ Route::get('/', [IndexContoroller::class, 'index']);
 Route::get('/mypage', [HomeContoroller::class, 'index']);
 // Auth
 Route::get('/login', [LoginController::class, 'index']);
+Route::get('/register', [RegisterController::class, 'index']);
