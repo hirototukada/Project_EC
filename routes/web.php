@@ -24,3 +24,4 @@ Route::get('/mypage', [HomeContoroller::class, 'index']);
 // Auth
 Route::get('/login', [LoginController::class, 'index']);
 Route::get('/register', [RegisterController::class, 'index']);
+Route::post('/signUp', [RegisterController::class, 'signUp'])->name('signUp');
