@@ -3,5 +3,6 @@
 }
 
 .form-input {
-    border-top: 1px solid rgb(156, 152, 152);
+    border-top: 1px solid #ededed;
+    padding-top: 20px;
 }

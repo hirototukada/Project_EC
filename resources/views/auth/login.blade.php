@@ -15,7 +15,9 @@
     <div class="container">
         <div class="row justify-content-center mt-5">
             <div class="col-md-8">
-                <div class='content-img'>画僧（ロゴ）</div>
+                <a href="/">
+                    <div class='content-img'>画僧（ロゴ）</div>
+                </a>
                 <div>
                     <h1 class="text-center">会員ログイン</h1>
                 </div>
