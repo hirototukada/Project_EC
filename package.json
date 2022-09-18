@@ -16,9 +16,17 @@
         "laravel-mix": "^6.0.49",
         "lodash": "^4.17.19",
         "postcss": "^8.1.14",
+<<<<<<< HEAD
+        "sass": "^1.32.11",
+        "vite": "^3.0.0"
+    },
+    "dependencies": {
+        "esbuild": "^0.15.7"
+=======
         "sass": "^1.32.11"
     },
     "dependencies": {
         "sass-loader": "^10.1.1"
+>>>>>>> 6e235ad84851a0304ccb07891a2056cbb13dd5b2
     }
 }
