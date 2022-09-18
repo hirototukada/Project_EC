@@ -25,3 +25,4 @@ Route::get('/mypage', [HomeContoroller::class, 'index']);
 Route::get('/login', [LoginController::class, 'index']);
 Route::get('/register', [RegisterController::class, 'index']);
 Route::post('/signUp', [RegisterController::class, 'signUp'])->name('signUp');
+Route::post('/comfirm', [RegisterController::class, 'comfirm'])->name('comfirm');
