@@ -22,7 +22,7 @@
                     <h1 class="text-center">新規登録</h1>
                 </div>
                 <div>
-                    <form method="POST" action="{{ route('signUp') }}">
+                    <form method="POST" action="{{ route('comfirm') }}">
                         @csrf
                         <div class="mb-3 row form-input">
                             <label for="email" class="col-md-3 col-form-label text-md-start">メールアドレス</label>
@@ -64,8 +64,8 @@
                         <div class="mb-3 row form-input">
                             <label for="pref_id" class="col-md-3 col-form-label text-md-start">都道府県</label>
                             <div class="col-md-9">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>選択してください</option>
+                                <select class="form-select" aria-label="Default select example" name="pref_id">
+                                    <option value="">選択してください</option>
                                     <option value="1">One</option>
                                     <option value="2">Two</option>
                                     <option value="3">Three</option>
