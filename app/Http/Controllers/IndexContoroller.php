@@ -16,8 +16,6 @@ class IndexContoroller extends Controller
             'products' => $products,
             'categories' => $allCategories,
         ]);
-
-        return view('index');
     }
 
 }
