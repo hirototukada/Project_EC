@@ -19,7 +19,7 @@
                     <div class='content-img'>画僧（ロゴ）</div>
                 </a>
                 <div>
-                    <h1 class="text-center">新規登録</h1>
+                    <h1 class="text-center">新規会員登録</h1>
                 </div>
                 <div>
                     <form method="POST" action="{{ route('comfirm') }}">
@@ -115,7 +115,7 @@
                             </span>
                             @enderror
                         </div>
-                        <div class="row mb-3 mt-4">
+                        <div class="row mb-3 mt-5">
                             <div>
                                 <button type="submit" class="btn btn-primary w-100 h-4">
                                     登録内容の確認へ
