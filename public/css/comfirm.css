@@ -1,0 +1,19 @@
+.content-img {
+    height: 300px;
+}
+
+.form-input {
+    border-top: 1px solid #ededed;
+    padding-top: 20px;
+}
+
+#email,
+#name,
+#postal_code,
+#pref_id,
+#city,
+#addres,
+#password {
+    border: none;
+    background-color: white;
+}

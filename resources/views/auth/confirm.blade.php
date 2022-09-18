@@ -8,7 +8,7 @@
     <title>確認画面</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/register.css">
+    <link rel="stylesheet" href="css/comfirm.css">
 </head>
 
 <body class="bg-white">
@@ -19,8 +19,8 @@
                     <div class='content-img'>画僧（ロゴ）</div>
                 </a>
                 <div>
-                    <h1 class="text-center">新規会員登録</h1>
-                    <p>登録内容をご確認ください。変更はマイページから行えます。</p>
+                    <h1 class="text-center mb-3">新規会員登録</h1>
+                    <p class="text-center mb-3">登録内容をご確認ください。変更はマイページから行えます。</p>
                 </div>
                 <div>
                     <form method="POST" action="{{ route('comfirm') }}">
@@ -29,7 +29,7 @@
                             <label for="email" class="col-md-3 col-form-label text-md-start">メールアドレス</label>
                             <div class="col-md-9">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
-                                    name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                    name="email" value="{{ $email }}" required autocomplete="email" readonly>
                             </div>
                             @error('email')
                             <span class="invalid-feedback" role="alert">
@@ -37,11 +37,11 @@
                             </span>
                             @enderror
                         </div>
-                        <div class="mb-3 row form-input">
+                        <div class="mb-3 row form-inwhput">
                             <label for="name" class="col-md-3 col-form-label text-md-start">名前</label>
                             <div class="col-md-9">
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"
-                                    name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                    name="name" value="{{ $name }}" required autocomplete="name" readonly>
                             </div>
                             @error('name')
                             <span class="invalid-feedback" role="alert">
@@ -54,7 +54,7 @@
                             <div class="col-md-9">
                                 <input id="postal_code" type="text"
                                     class="form-control @error('postal_code') is-invalid @enderror" name="postal_code"
-                                    value="{{ old('postal_code') }}" required autocomplete="postal_code" autofocus>
+                                    value="{{ $postal_code }}" required autocomplete="postal_code" readonly>
                             </div>
                             @error('postal_code')
                             <span class="invalid-feedback" role="alert">
@@ -65,12 +65,9 @@
                         <div class="mb-3 row form-input">
                             <label for="pref_id" class="col-md-3 col-form-label text-md-start">都道府県</label>
                             <div class="col-md-9">
-                                <select class="form-select" aria-label="Default select example" name="pref_id">
-                                    <option value="">選択してください</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
-                                </select>
+                                <input id="pref_id" type="text"
+                                    class="form-control @error('pref_id') is-invalid @enderror" name="pref_id"
+                                    value="{{ $pref_id }}" required autocomplete="pref_id" readonly>
                             </div>
                             @error('pref_id')
                             <span class="invalid-feedback" role="alert">
@@ -82,7 +79,7 @@
                             <label for="city" class="col-md-3 col-form-label text-md-start">市区町村</label>
                             <div class="col-md-9">
                                 <input id="city" type="text" class="form-control @error('city') is-invalid @enderror"
-                                    name="city" value="{{ old('city') }}" required autocomplete="city" autofocus>
+                                    name="city" value="{{ $city }}" required autocomplete="city" readonly>
                             </div>
                             @error('city')
                             <span class="invalid-feedback" role="alert">
@@ -95,7 +92,7 @@
                             <div class="col-md-9">
                                 <input id="addres" type="text"
                                     class="form-control col-md-2 @error('addres') is-invalid @enderror" name="addres"
-                                    value="{{ old('addres') }}" required autocomplete="addres" autofocus>
+                                    value="{{ $addres }}" required autocomplete="addres" readonly>
                             </div>
                             @error('addres')
                             <span class="invalid-feedback" role="alert">
@@ -108,7 +105,7 @@
                             <div class="col-md-9">
                                 <input id="password" type="password"
                                     class="form-control  @error('password') is-invalid @enderror" name="password"
-                                    required autocomplete="current-password">
+                                    value="{{ $password }}" required autocomplete="current-password" readonly>
                             </div>
                             @error('password')
                             <span class="invalid-feedback" role="alert">

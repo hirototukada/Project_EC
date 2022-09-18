@@ -37,7 +37,7 @@ class RegisterController extends Controller
         MakeBaseData $makeBaseData
     ) {
         $viewData = $makeBaseData($request);
-        dd('ok');
+
         return view('auth.confirm', $viewData);
     }
 }
