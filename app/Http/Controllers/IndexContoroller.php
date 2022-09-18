@@ -17,5 +17,4 @@ class IndexContoroller extends Controller
             'categories' => $allCategories,
         ]);
     }
-
 }
