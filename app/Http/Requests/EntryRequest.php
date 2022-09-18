@@ -13,7 +13,7 @@ class EntryRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,13 @@ class EntryRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => ["required"],
+            'email' => ['required'],
+            'postal_code' => ['required'],
+            'pref_id' => ['required'],
+            'city' => ['required'],
+            'addres' => ['required'],
+            'password' => ['required'],
         ];
     }
 }
