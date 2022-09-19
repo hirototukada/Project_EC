@@ -40,4 +40,16 @@ class RegisterController extends Controller
 
         return view('auth.confirm', $viewData);
     }
+
+    /**
+     * 登録完了
+     *
+     * @param EntryRequest $request
+     */
+    public function fin(
+        EntryRequest $request
+    ) {
+        return view('fin');
+
+    }
 }
