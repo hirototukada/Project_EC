@@ -27,4 +27,15 @@ class MakeBaseData
 
         return $baseData;
     }
+
+    /**
+     * 郵便番号の成形
+     *
+     * @param int $postal_code
+     * @return string
+     */
+    private function sanitaizePostal(int $postal_code)
+    {
+        return $postal_code;
+    }
 }

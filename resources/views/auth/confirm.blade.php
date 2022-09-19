@@ -115,12 +115,12 @@
                         </div>
                         <div class="row mb-3 mt-5">
                             <div>
-                                <button type="submit" class="btn btn-primary w-100 h-4">
+                                <button type="submit" class="btn btn-primary w-100 h-5">
                                     登録内容の確認へ
                                 </button>
                             </div>
-                            <div>
-                                <button type="" class="btn btn-primary w-100 h-4">
+                            <div class="mt-3">
+                                <button type="button" onClick="history.back()" class="btn btn-outline-dark w-100 h-4">
                                     登録情報を修正する
                                 </button>
                             </div>
