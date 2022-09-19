@@ -8,7 +8,7 @@
     <title>確認画面</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/comfirm.css">
+    <link rel="stylesheet" href="css/Auth/comfirm.css">
 </head>
 
 <body class="bg-white">
@@ -23,7 +23,7 @@
                     <p class="text-center mb-3">登録内容をご確認ください。変更はマイページから行えます。</p>
                 </div>
                 <div>
-                    <form method="POST" action="{{ route('comfirm') }}">
+                    <form method="POST" action="{{ route('fin') }}">
                         @csrf
                         <div class="mb-3 row form-input">
                             <label for="email" class="col-md-3 col-form-label text-md-start">メールアドレス</label>
@@ -116,7 +116,7 @@
                         <div class="row mb-3 mt-5">
                             <div>
                                 <button type="submit" class="btn btn-primary w-100 h-5">
-                                    登録内容の確認へ
+                                    登録
                                 </button>
                             </div>
                             <div class="mt-3">
@@ -136,9 +136,7 @@
         </div>
     </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-    </script>
+    @include('common.footer')
 </body>
 
 </html>

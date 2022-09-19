@@ -49,7 +49,7 @@ class RegisterController extends Controller
     public function fin(
         EntryRequest $request
     ) {
-        return view('fin');
+        return view('auth.fin');
 
     }
 }
