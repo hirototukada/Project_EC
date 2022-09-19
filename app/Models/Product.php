@@ -14,7 +14,7 @@ class Product extends Model
     }
     public function cart()
     {
-        return $this->hasMany('APP\Cart', );
+        return $this->hasMany('APP\Cart');
     }
     public function user()
     {
