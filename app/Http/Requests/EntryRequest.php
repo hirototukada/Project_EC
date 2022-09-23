@@ -25,11 +25,13 @@ class EntryRequest extends FormRequest
     {
         return [
             'name' => ["required"],
-            'email' => ['required'],
+            'email' => ['required', 'regex:/^([a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9]*\.)+[a-zA-Z]{2,}$/'],
             'postal_code' => ['required', 'numeric'],
             'pref_id' => ['required'],
             'city' => ['required'],
+            'town' => ['required'],
             'building' => ['required'],
+            'phone_number' => ['required', 'bail', 'numeric'],
             'password' => ['required', 'min:8'],
         ];
     }
@@ -50,6 +52,11 @@ class EntryRequest extends FormRequest
         $sanitaizeMail = mb_convert_kana($sanitaizeMail, 'r');
         $sanitaizeMail = mb_convert_kana($sanitaizeMail, 'n');
 
+        // 電話番号
+        $sanitaizePhone = mb_convert_kana($this->input('phone_number'), 'n');
+        $target         = [' ', '-'];
+        $sanitaizePhone = str_replace($target, "", $this->input('phone_number'));
+
         // 郵便番号
         $sanitaizePostal = str_replace(" ", "", $this->input('postal_code'));
         $sanitaizePostal = mb_convert_kana($sanitaizePostal, 'n');
@@ -60,6 +67,7 @@ class EntryRequest extends FormRequest
         $this->merge([
             'name' => $sanitaizeName,
             'email' => $sanitaizeMail,
+            'phone_number' => $sanitaizePhone,
             'postal_code' => $sanitaizePostal,
             'password' => $sanitaizePassword,
         ]);
