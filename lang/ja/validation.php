@@ -116,7 +116,7 @@ return [
     'prohibited_if' => 'The :attribute field is prohibited when :other is :value.',
     'prohibited_unless' => 'The :attribute field is prohibited unless :other is in :values.',
     'prohibits' => 'The :attribute field prohibits :other from being present.',
-    'regex' => 'The :attribute format is invalid.',
+    'regex' => ':attributeを正しく入力してください。',
     'required' => ':attributeは必須です。',
     'required_array_keys' => 'The :attribute field must contain entries for: :values.',
     'required_if' => 'The :attribute field is required when :other is :value.',
@@ -156,6 +156,7 @@ return [
             'required' => ':attributeを選択してください',
         ],
     ],
+    'custom_tel' => ':attributeを正しく入力してください。',
 
     /*
     |--------------------------------------------------------------------------
@@ -171,10 +172,12 @@ return [
     'attributes' => [
         'name' => '名前',
         'email' => 'メールアドレス',
+        'phone_number' => '電話番号',
         'postal_code' => '郵便番号',
         'pref_id' => '都道府県',
         'city' => '市区町村',
-        'building' => '建物名、番地',
+        'town' => '番地',
+        'building' => '建物名',
         'password' => 'パスワード',
     ],
 

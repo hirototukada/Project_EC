@@ -75,7 +75,6 @@
                                 </span>
                                 @enderror
                             </div>
-
                         </div>
                         <div class="mb-3 row form-input">
                             <label for="pref_id" class="col-md-3 col-form-label text-md-start">都道府県</label>
@@ -83,9 +82,9 @@
                                 <select class="form-select @error('pref_id') is-invalid @enderror"
                                     aria-label="Default select example" name="pref_id" required>
                                     <option value="">選択してください</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
+                                    @foreach (config('pref') as $key => $value)
+                                    <option value={{$key}}>{{$value}}</option>
+                                    @endforeach
                                 </select>
                                 @error('pref_id')
                                 <span class="invalid-feedback" role="alert">
