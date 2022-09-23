@@ -21,7 +21,9 @@ class MakeBaseData
             'postal_code' => $allRequest['postal_code'],
             'pref_id' => $allRequest['pref_id'],
             'city' => $allRequest['city'],
-            'addres' => $allRequest['addres'],
+            'building' => $allRequest['building'],
+            'town' => $allRequest['town'],
+            'phone_number' => $allRequest['phone_number'],
             'password' => $allRequest['password'],
         ];
 

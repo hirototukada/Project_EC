@@ -29,7 +29,7 @@ class EntryRequest extends FormRequest
             'postal_code' => ['required', 'numeric'],
             'pref_id' => ['required'],
             'city' => ['required'],
-            'addres' => ['required'],
+            'building' => ['required'],
             'password' => ['required', 'min:8'],
         ];
     }

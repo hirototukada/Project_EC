@@ -25,6 +25,18 @@
                     <form method="POST" action="{{ route('comfirm') }}">
                         @csrf
                         <div class="mb-3 row form-input">
+                            <label for="name" class="col-md-3 col-form-label text-md-start">名前</label>
+                            <div class="col-md-9">
+                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"
+                                    name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                @error('name')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="mb-3 row form-input">
                             <label for="email" class="col-md-3 col-form-label text-md-start">メールアドレス</label>
                             <div class="col-md-9">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
@@ -38,11 +50,13 @@
 
                         </div>
                         <div class="mb-3 row form-input">
-                            <label for="name" class="col-md-3 col-form-label text-md-start">名前</label>
+                            <label for="phone_number" class="col-md-3 col-form-label text-md-start">電話番号</label>
                             <div class="col-md-9">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"
-                                    name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-                                @error('name')
+                                <input id="phone_number" type="text"
+                                    class="form-control col-md-2 @error('phone_number') is-invalid @enderror"
+                                    name="phone_number" value="{{ old('phone_number') }}" required
+                                    autocomplete="phone_number" autofocus>
+                                @error('phone_number')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
@@ -94,18 +108,31 @@
                             </div>
                         </div>
                         <div class="mb-3 row form-input">
-                            <label for="addres" class="col-md-3 col-form-label text-md-start">番地以外</label>
+                            <label for="town" class="col-md-3 col-form-label text-md-start">番地</label>
                             <div class="col-md-9">
-                                <input id="addres" type="text"
-                                    class="form-control col-md-2 @error('addres') is-invalid @enderror" name="addres"
-                                    value="{{ old('addres') }}" required autocomplete="addres" autofocus>
-                                @error('addres')
+                                <input id="town" type="text"
+                                    class="form-control col-md-2 @error('town') is-invalid @enderror" name="town"
+                                    value="{{ old('town') }}" required autocomplete="town" autofocus>
+                                @error('town')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                                 @enderror
                             </div>
-
+                        </div>
+                        <div class="mb-3 row form-input">
+                            <label for="building" class="col-md-3 col-form-label text-md-start">建物名</label>
+                            <div class="col-md-9">
+                                <input id="building" type="text"
+                                    class="form-control col-md-2 @error('building') is-invalid @enderror"
+                                    name="building" value="{{ old('building') }}" required autocomplete="building"
+                                    autofocus>
+                                @error('building')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
                         </div>
                         <div class="mb-3 row form-input">
                             <label for="email" class="col-md-3 col-form-label text-md-start">パスワード</label>

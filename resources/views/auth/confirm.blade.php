@@ -25,6 +25,18 @@
                 <div>
                     <form method="POST" action="{{ route('fin') }}">
                         @csrf
+                        <div class="mb-3 row form-inwhput">
+                            <label for="name" class="col-md-3 col-form-label text-md-start">名前</label>
+                            <div class="col-md-9">
+                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"
+                                    name="name" value="{{ $name }}" required autocomplete="name" readonly>
+                            </div>
+                            @error('name')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                        </div>
                         <div class="mb-3 row form-input">
                             <label for="email" class="col-md-3 col-form-label text-md-start">メールアドレス</label>
                             <div class="col-md-9">
@@ -37,13 +49,15 @@
                             </span>
                             @enderror
                         </div>
-                        <div class="mb-3 row form-inwhput">
-                            <label for="name" class="col-md-3 col-form-label text-md-start">名前</label>
+                        <div class="mb-3 row form-input">
+                            <label for="phone_number" class="col-md-3 col-form-label text-md-start">電話番号</label>
                             <div class="col-md-9">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"
-                                    name="name" value="{{ $name }}" required autocomplete="name" readonly>
+                                <input id="phone_number" type="text"
+                                    class="form-control col-md-2 @error('phone_number') is-invalid @enderror"
+                                    name="phone_number" value="{{ $phone_number }}" required autocomplete="phone_number"
+                                    readonly>
                             </div>
-                            @error('name')
+                            @error('phone_number')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
@@ -88,13 +102,26 @@
                             @enderror
                         </div>
                         <div class="mb-3 row form-input">
-                            <label for="addres" class="col-md-3 col-form-label text-md-start">番地以外</label>
+                            <label for="town" class="col-md-3 col-form-label text-md-start">番地以外</label>
                             <div class="col-md-9">
-                                <input id="addres" type="text"
-                                    class="form-control col-md-2 @error('addres') is-invalid @enderror" name="addres"
-                                    value="{{ $addres }}" required autocomplete="addres" readonly>
+                                <input id="town" type="text"
+                                    class="form-control col-md-2 @error('town') is-invalid @enderror" name="town"
+                                    value="{{ $town }}" required autocomplete="town" readonly>
                             </div>
-                            @error('addres')
+                            @error('town')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                        </div>
+                        <div class="mb-3 row form-input">
+                            <label for="building" class="col-md-3 col-form-label text-md-start">建物</label>
+                            <div class="col-md-9">
+                                <input id="building" type="text"
+                                    class="form-control col-md-2 @error('building') is-invalid @enderror"
+                                    name="building" value="{{ $building }}" required autocomplete="building" readonly>
+                            </div>
+                            @error('building')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
