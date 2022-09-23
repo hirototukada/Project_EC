@@ -26,7 +26,7 @@ class ValidatorServiceProvider extends ServiceProvider
     {
         // ひらがな
         Validator::extend('custom_tel', function ($attribute, $value, $parameters, $validator) {
-            return preg_match('/^[ぁ-ん]+/u', $value);
+            return preg_match('/^0[789]0-[0-9]{4}-[0-9]{4}$/', $value);
         });
     }
 }
