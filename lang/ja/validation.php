@@ -174,7 +174,7 @@ return [
         'postal_code' => '郵便番号',
         'pref_id' => '都道府県',
         'city' => '市区町村',
-        'addres' => '建物名、番地',
+        'building' => '建物名、番地',
         'password' => 'パスワード',
     ],
 

@@ -7,12 +7,14 @@
     padding-top: 20px;
 }
 
-#email,
 #name,
+#email,
+#phone_number,
 #postal_code,
 #pref_id,
 #city,
-#addres,
+#building,
+#town,
 #password {
     border: none;
     background-color: white;

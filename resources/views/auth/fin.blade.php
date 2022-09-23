@@ -18,17 +18,23 @@
                 <a href="/">
                     <div class='content-img'>画僧（ロゴ）</div>
                 </a>
-                <div>
-                    <h1 class="text-center">ご登録頂きありがとうございます</h1>
+                <div class="mb-5">
+                    <h1 class="text-center">会員登録完了</h1>
                 </div>
                 <div class="mt-3 mb-3">
-                    <p class="text-center">ありがとうございます！<br>以下のメールアドレス宛に、本登録を行うURLをお送りしておりますのでご確認ください。</p>
+                    <p class="text-center">ご登録頂きありがとうございます！</p>
+                </div>
+                <div class="w-50 m-auto">
+                    <a href="/login">
+                        <button type="button" class="btn btn-dark w-100 h-5 mt-3">
+                            ログインへ
+                        </button>
+                    </a>
                 </div>
                 <div class="row mb-3">
                 </div>
             </div>
         </div>
-    </div>
     </div>
 </body>
 <div class="mt-5">

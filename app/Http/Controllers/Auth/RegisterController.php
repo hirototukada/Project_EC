@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\EntryRequest;
 use App\Http\UseCase\Auth\Register\MakeBaseData;
+use App\Http\UseCase\Auth\Register\UserRegister;
 
 class RegisterController extends Controller
 {
@@ -45,10 +46,14 @@ class RegisterController extends Controller
      * 登録完了
      *
      * @param EntryRequest $request
+     * @param UserRegister $userRegister
      */
     public function fin(
-        EntryRequest $request
+        EntryRequest $request,
+        UserRegister $userRegister
     ) {
+        $userRegister($request);
+
         return view('auth.fin');
 
     }
