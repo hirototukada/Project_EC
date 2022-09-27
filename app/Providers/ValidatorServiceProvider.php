@@ -24,7 +24,7 @@ class ValidatorServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        // ひらがな
+        // 携帯電話の正規表現
         Validator::extend('custom_tel', function ($attribute, $value, $parameters, $validator) {
             return preg_match('/^0[789]0-[0-9]{4}-[0-9]{4}$/', $value);
         });
