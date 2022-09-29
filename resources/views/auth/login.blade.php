@@ -23,7 +23,7 @@
                 </div>
                 <div class="card">
                     <div class="card-body">
-                        {{-- <form method="POST" action="{{ route('login') }}"> --}}
+                        <form method="POST" action="{{ route('login') }}">
                             <form>
                                 @csrf
 

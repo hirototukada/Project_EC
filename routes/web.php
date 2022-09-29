@@ -23,6 +23,7 @@ Route::get('/', [IndexContoroller::class, 'index']);
 Route::get('/mypage', [HomeContoroller::class, 'index']);
 // Auth
 Route::get('/login', [LoginController::class, 'index']);
+Route::post('/authenticate', [LoginController::class, 'authenticate'])->name('login');
 Route::get('/register', [RegisterController::class, 'index']);
 Route::post('/signUp', [RegisterController::class, 'signUp'])->name('signUp');
 Route::post('/comfirm', [RegisterController::class, 'comfirm'])->name('comfirm');
