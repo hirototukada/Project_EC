@@ -6,14 +6,21 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\EntryRequest;
 use App\Http\UseCase\Auth\Register\MakeBaseData;
 use App\Http\UseCase\Auth\Register\UserRegister;
+use Illuminate\Foundation\Auth\RegistersUsers;
 
 class RegisterController extends Controller
 {
+    use RegistersUsers;
     private $viewData = [];
 
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
     public function __construct()
     {
-
+        $this->middleware('guest');
     }
 
     /**

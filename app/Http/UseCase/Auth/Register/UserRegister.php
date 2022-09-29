@@ -25,8 +25,11 @@ class UserRegister
      */
     private function __invoke(Request $request): bool
     {
-        $userData      = $this->separateUser($request);
-        $userId        = $this->user->registration($userData);
+        // user登録
+        $userData = $this->separateUser($request);
+        $userId   = $this->user->registration($userData);
+
+        // address登録
         $addressesData = $this->separateAddresses($request, $userId);
         $isAddresses   = $this->addresses->registration($addressesData);
 

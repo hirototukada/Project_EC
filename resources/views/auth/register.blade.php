@@ -52,7 +52,7 @@
                         <div class="mb-3 row form-input">
                             <label for="phone_number" class="col-md-3 col-form-label text-md-start">電話番号</label>
                             <div class="col-md-9">
-                                <input id="phone_number" type="text"
+                                <input id="phone_number" type="tel"
                                     class="form-control col-md-2 @error('phone_number') is-invalid @enderror"
                                     name="phone_number" value="{{ old('phone_number') }}" required
                                     autocomplete="phone_number" autofocus>
