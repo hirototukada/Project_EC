@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('city');
             $table->string('town');
             $table->string('building');
-            $table->integer('phone_number');
+            $table->unsignedBigInteger('phone_number');
         });
     }
 

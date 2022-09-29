@@ -25,7 +25,11 @@ class EntryRequest extends FormRequest
     {
         return [
             'name' => ["required"],
-            'email' => ['required', 'regex:/^([a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9]*\.)+[a-zA-Z]{2,}$/'],
+            'email' => [
+                'required',
+                'regex:/[a-zA-Z0-9_.+-]+@([a-zA-Z0-9]*[a-zA-Z0-9-][a-zA-Z0-9]\\.)+[a-zA-Z]{2,}$/',
+                'unique:users,email' . $this->id . ',id',
+            ],
             'postal_code' => ['required', 'numeric'],
             'pref_id' => ['required'],
             'city' => ['required'],
@@ -49,13 +53,18 @@ class EntryRequest extends FormRequest
 
         // メールアドレス
         $sanitaizeMail = str_replace(" ", "", $this->input('email'));
-        $sanitaizeMail = mb_convert_kana($sanitaizeMail, 'r');
-        $sanitaizeMail = mb_convert_kana($sanitaizeMail, 'n');
+        // 全角から半角へ
+        $sanitaizeMail = mb_convert_kana($sanitaizeMail, 'a', 'UTF-8');
 
         // 電話番号
-        $sanitaizePhone = mb_convert_kana($this->input('phone_number'), 'n');
-        $target         = [' ', '-'];
-        $sanitaizePhone = str_replace($target, "", $this->input('phone_number'));
+        // 全角から半角へ
+        $sanitaizePhone = mb_convert_kana($this->input('phone_number'), 'a', 'UTF-8');
+        // 長音、ダッシュを半角スペース削除
+        $sanitaizePhone = str_replace("\x20|　", "", $sanitaizePhone);
+        // 長音、ダッシュを半角ハイフンに置換
+        $sanitaizePhone = str_replace("―|ー", "-", $sanitaizePhone);
+        // ハイフン、かっこを削除
+        $sanitaizePhone = str_replace("/\(|\)|\-/", "", $sanitaizePhone);
 
         // 郵便番号
         $sanitaizePostal = str_replace(" ", "", $this->input('postal_code'));
