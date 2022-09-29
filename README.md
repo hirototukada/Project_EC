@@ -8,12 +8,15 @@
 </p>
 
 ## sail入り方
-### 下記コマンドを順に実行
-
+### sail 立ち上げ
 - ./vendor/bin/sail up -d
+
+### ワークスペースに入り、コマンド実行
 - ./vendor/bin/sail shell
 - composer update 
 - php artisan migrate:refresh
+
+
 
 
 
